@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Letter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            background-image: url('4.jpeg');
+            /* Replace 'background.jpg' with your background image */
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .envelope {
+            width: 600px;
+            height: 550px;
+            background-color: #fb07076f;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-style: solid;
+            border-width: 15px 15px 0 15px;
+            border-color: #100a0a transparent transparent transparent;
+        }
+        
+        .envelope:hover {
+            transform: translateY(-10px);
+        }
+        
+        .letter {
+            width: 550px;
+            height: 500px;
+            background-color: rgba(242, 242, 242, 0);
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            display: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        
+        .letter::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            border-style: solid;
+            border-width: 15px 15px 0 15px;
+            border-color: #100a0a transparent transparent transparent;
+        }
+        
+        .open .letter {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="envelope" onclick="openLetter()">
+        <div class="letter"></div>
+        <p>Line 1 of the message.</p>
+        <p>Line 2 of the message.</p>
+        <p>Line 3 of the message.</p>
+        <p>Line 4 of the message.</p>
+        <p>Line 5 of the message.</p>
+        <p>Line 6 of the message.</p>
+        <p>Line 7 of the message.</p>
+        <p>Line 8 of the message.</p>
+        <p>Line 9 of the message.</p>
+        <p>Line 10 of the message.</p>
+    </div>
+    <script>
+        function openLetter() {
+            var envelope = document.querySelector('.envelope');
+            envelope.classList.toggle('open');
+        }
+    </script>
+</body>
+
+</html>
